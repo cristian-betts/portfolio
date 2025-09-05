@@ -1,0 +1,14 @@
+:root {
+    --color-fondo: #934c69;
+    --botones: #e7dfd8;
+    --fondo-barras: #d9d9d9;
+    --avance-barras: #a6a6a6;
+}
+
+body {
+    .adamina-regular {
+  font-family: "Adamina", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+}
