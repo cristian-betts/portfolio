@@ -4,17 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Adamina&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./estilos.css">
+    <link rel="stylesheet" href="estilos.css">
     <title>Portfolio</title>
 </head>
 <body>
     <Header>
-        <a href="#sobremi">Sobre mí</a>
-        <a href="#habilidades">Habilidades</a>
-        <a href="#proyectos">Proyectos</a>
-        <a href="#contactame">Contáctame</a>
+        <nav class="navbar">
+            <button class="hamburger" id="hamburger">&#9776;</button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#sobremi">Sobre mi</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#proyectos">Proyetos</a></li>
+                <li><a href="#contactame">Contáctame</a></li>
+            </ul>
+        </nav>
     </Header>
     <main>
         <!--Introducción a mi-->
@@ -32,12 +35,73 @@
         </section>
         <!--Habilidades-->
         <section id="habilidades">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+            <h2>Habilidades</h2>
+            <article>
+                <h4>Análisis Químico</h4>
+                <div class="progress-container">
+                    <div class="progress-bar" id="bar1">0%</div>
+                    <div class=""></div>
+                </div>
+                <div class="controls">
+                    <button onclick="increaseProgress('bar1')">Aumentar</button>
+                    <button onclick="resetProgress('bar1')">Reiniciar</button>
+                </div>
+            </article>
+            <article>
+                <h4>Elaboración de Productos Químicos</h4>
+                <div class="progress-container">
+                    <div class="progress-bar" id="bar2">0%</div>
+                    <div class=""></div>
+                </div>
+                <div class="controls">
+                    <button onclick="increaseProgress('bar2')">Aumentar</button>
+                    <button onclick="resetProgress('bar2')">Reiniciar</button>
+                </div>
+            </article>
+            <article>
+                <h4>Manejos Básicos de Programación</h4>
+                <div class="progress-container">
+                    <div class="progress-bar" id="bar3">0%</div>
+                    <div class=""></div>
+                </div>
+                <div class="controls">
+                    <button onclick="increaseProgress('bar3')">Aumentar</button>
+                    <button onclick="resetProgress('bar3')">Reiniciar</button>
+                </div>
+            </article>
+            <article>
+                <h4>Teoría STEM</h4>
+                <div class="progress-container">
+                    <div class="progress-bar" id="bar4">0%</div>
+                    <div class=""></div>
+                </div>
+                <div class="controls">
+                    <button onclick="increaseProgress('bar4')">Aumentar</button>
+                    <button onclick="resetProgress('bar4')">Reiniciar</button>
+                </div>
+            </article>
+            <article>
+                <h4>Manejo de Técnicas de Laboratorio</h4>
+                <div class="progress-container">
+                    <div class="progress-bar" id="bar5">0%</div>
+                    <div class=""></div>
+                </div>
+                <div class="controls">
+                    <button onclick="increaseProgress('bar5')">Aumentar</button>
+                    <button onclick="resetProgress('bar5')">Reiniciar</button>
+                </div>
+            </article>
+            <article>
+                <h4>Habilidades para la Vida</h4>
+                <div class="progress-container">
+                    <div class="progress-bar" id="bar6">0%</div>
+                    <div class=""></div>
+                </div>
+                <div class="controls">
+                    <button onclick="increaseProgress('bar6')">Aumentar</button>
+                    <button onclick="resetProgress('bar6')">Reiniciar</button>
+                </div>
+            </article>
         </section>
         <!--Proyectos-->
         <section id="proyectos">
@@ -53,26 +117,31 @@
                  <a href="./projects.html">Ver más</a>
             </article>
             <article>
-                <img src="./assets/images/informe, imagen de referencia.jpeg" alt="conversión de metano a hidrógeno y su uso potencial">
+                <img src="./assets/images/informe, imagen de referencia.jpeg" alt="Conversión de metano a hidrógeno y su uso potencial">
                 <a href="./projects.html">Ver más</a>
             </article>
         </section>
         <!--Contacto-->
         <section id="contactame">
             <h2>Contáctame</h2>
-            <form>
+            <form id="miFormulario" action="#">
                 <fieldset>
                     <legend>* Indica que el campo es obligatorio</legend>
                     <label for="nombre">Nombre*</label>
                     <input id="nombre" type="text" required>
-                    <label for="email">Correo electrónico*</label>
-                    <input id="email" type="email" required>
-                    <label for="fijo">Télefono (fijo)</label>
-                    <input id="fijo" type="number" min="7">
+                    <small id="errorNombre"></small>
+                    <label for="mail">Correo electrónico*</label>
+                    <input id="mail" type="email" required>
+                    <small id="errorMail"></small>
+                    <label for="telefono">Télefono (fijo)</label>
+                    <input id="telefono" type="number" min="7">
+                    <small id="errorTelefono"></small>
                     <label for="direccion">Dirección</label>
                     <input id="direccion" type="text">
+                    <small id="errorDireccion"></small>
                     <label for="celular">Télefono (celular)*</label>
                     <input id="celular" type="number" min="10" required>
+                    <small id="errorCelular"></small>
                     <label for="contacto">¿Cómo desea ser contactado?</label>
                     <select name="contacto" id="contacto" required>
                         <option value="opcion">Seleccione una opción</option>
@@ -80,6 +149,7 @@
                         <option value="celular">Télefono Celular</option>
                         <option value="email">Correo Electrónico</option>
                     </select>
+                    <small id="errorContacto"></small>
                     <textarea name="mensaje" id="mensaje">Mensaje (opcional)</textarea>
                 </fieldset>
                 <button>Enviar</button>
@@ -89,5 +159,6 @@
     <footer>
 
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>

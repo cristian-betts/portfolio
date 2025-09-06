@@ -1,14 +1,73 @@
+/*variables*/
 :root {
-    --color-fondo: #934c69;
+    --color-fondo: #93b4c6;
     --botones: #e7dfd8;
     --fondo-barras: #d9d9d9;
     --avance-barras: #a6a6a6;
 }
 
-body {
-    .adamina-regular {
-  font-family: "Adamina", serif;
-  font-weight: 400;
-  font-style: normal;
+/*menú hamburguesa*/
+header {
+  background: #50afe2;
+  color: var(--color-fondo);
 }
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
 }
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ff9800;
+}
+
+/* Botón hamburguesa */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+}
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: var(--color-fondo);
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 200px;
+    padding: 1rem;
+    z-index: 1000;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  body {
+    background-color: var(--color-fondo);
+  }
