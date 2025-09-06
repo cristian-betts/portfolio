@@ -10,7 +10,7 @@ let progressValues = {
 
 function increaseProgress(barId) {
   if (progressValues[barId] < 100) {
-    progressValues[barId] += 10;
+    progressValues[barId] += 5;
     updateBar(barId);
   }
 }

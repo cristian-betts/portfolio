@@ -454,3 +454,45 @@ form button:hover {
 html {
   scroll-padding-top: 120px;
 }
+
+/* --- Footer --- */
+.footer {
+  background: #50afe2;         /* mismo color que el header */
+  color: white;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  padding: 15px 0;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap; /* se acomoda en móviles */
+}
+
+.footer-links li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #ffeb3b; /* amarillo en hover */
+}
+
+.footer .icon {
+  width: 20px;
+  height: 20px;
+}
