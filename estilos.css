@@ -10,13 +10,25 @@
 header {
   background: #50afe2;
   color: var(--color-fondo);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2000;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 2000;
+  padding: 0 1rem;
+  min-height: 100px;
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 0 1rem;
 }
 
 .nav-links a {
@@ -68,6 +80,51 @@ header {
     display: flex;
   }
 
-  body {
-    background-color: var(--color-fondo);
-  }
+body { 
+  background-color: var(--color-fondo); 
+  margin: 0;
+  padding-top: 100px;
+}
+
+/*barras interactivas*/
+.progress-group {
+  margin-bottom: 30px;
+}
+
+.progress-container {
+  width: 80%;
+  height: 30px;
+  background: var(--fondo-barras);
+  border-radius: 15px;
+  overflow: hidden;
+  margin: 10px auto;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--avance-barras), var(--avance-barras));
+  text-align: center;
+  line-height: 30px;
+  color: black;
+  font-weight: bold;
+  border-radius: 15px 0 0 15px;
+  transition: width 0.4s ease-in-out;
+}
+
+button {
+  margin: 5px;
+  padding: 8px 16px;
+  font-size: 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: var(--botones);
+  color: black;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: rgb(132, 132, 209);
+}

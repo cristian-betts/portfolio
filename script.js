@@ -22,7 +22,7 @@ function resetProgress(barId) {
 
 function updateBar(barId) {
   const bar = document.getElementById(barId);
-  if (bar) { // seguridad por si no existe el ID
+  if (bar) { 
     bar.style.width = progressValues[barId] + "%";
     bar.textContent = progressValues[barId] + "%";
   } else {
@@ -31,7 +31,6 @@ function updateBar(barId) {
 }
 
 //validación del formulario
-// Obtener campos
 const nombre = document.getElementById("nombre");
 const mail = document.getElementById("mail");
 const telefono = document.getElementById("telefono");
@@ -39,7 +38,6 @@ const celular = document.getElementById("celular");
 const direccion = document.getElementById("direccion");
 const contacto = document.getElementById("contacto");
 
-// Obtener errores
 const errorNombre = document.getElementById("errorNombre");
 const errorMail = document.getElementById("errorMail");
 const errorTelefono = document.getElementById("errorTelefono");
@@ -47,7 +45,6 @@ const errorCelular = document.getElementById("errorCelular");
 const errorDireccion = document.getElementById("errorDireccion");
 const errorContacto = document.getElementById("errorContacto");
 
-// Validaciones en tiempo real
 nombre.addEventListener("input", () => {
   errorNombre.textContent = nombre.value.trim().length < 3 ? "Mínimo 3 caracteres" : "";
 });
@@ -72,7 +69,6 @@ contacto.addEventListener("change", () => {
   errorContacto.textContent = contacto.value === "" ? "Seleccione una opción" : "";
 });
 
-// Validación antes de enviar
 document.getElementById("miFormulario").addEventListener("submit", (e) => {
   if (
     nombre.value.trim().length < 3 ||
@@ -82,11 +78,25 @@ document.getElementById("miFormulario").addEventListener("submit", (e) => {
     direccion.value.trim() === "" ||
     contacto.value === ""
   ) {
-    e.preventDefault(); // Cancela el envío
+    e.preventDefault(); 
     alert("Por favor corrige los errores antes de enviar");
   }
     else {
         alert("Formulario enviado correctamente");
         e.target.reset();
     }
+});
+
+//menu hamburguesa responsive
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+});
+
+const links = document.querySelectorAll("#nav-links a");
+links.forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("show");
+  });
 });
