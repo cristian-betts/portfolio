@@ -49,12 +49,27 @@ header {
   border: none;
   color: white;
   cursor: pointer;
+  z-index: 3000;
+  position: relative;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
   gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  text-align: center; /* centra el contenido de cada li */
+}
+
+.nav-links a {
+  display: block;     /* hace que el enlace ocupe todo el ancho del li */
+  text-align: center; /* centra el texto dentro del enlace */
 }
 
 /* --- Responsive --- */
@@ -62,12 +77,11 @@ header {
   .hamburger {
     display: block;
   }
-}
 
   .nav-links {
     display: none;
     flex-direction: column;
-    background: var(--color-fondo);
+    background: #b0d4f1;
     position: absolute;
     top: 70px;
     right: 0;
@@ -79,6 +93,7 @@ header {
   .nav-links.show {
     display: flex;
   }
+}
 
 body { 
   background-color: var(--color-fondo); 
@@ -123,8 +138,319 @@ button {
   background: var(--botones);
   color: black;
   transition: background 0.3s;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 button:hover {
   background: rgb(132, 132, 209);
+}
+
+/* --- Formulario de contacto --- */
+.contacto {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #b0d4f1; 
+  border-radius: 10px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+form fieldset {
+  border: none;
+  border-radius: 0;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* etiquetas 1/3, campos 2/3 */
+  gap: 15px 20px;
+  align-items: center;
+}
+
+form legend {
+  font-size: 1.3em;
+  font-weight: bold;
+  padding: 0 10px;
+  grid-column: span 2; 
+  text-align: center;
+}
+
+form label {
+  font-weight: bold;
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #444;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+/* textarea más grande ocupando las 2 columnas */
+form textarea {
+  min-height: 150px;
+  resize: vertical;
+  grid-column: span 2;
+}
+
+/* errores debajo de cada input */
+form small {
+  color: red;
+  font-size: 12px;
+  grid-column: span 2;
+  margin-top: -10px;
+}
+
+/* Botón de envío centrado */
+form button {
+  grid-column: span 2;
+  justify-self: center;
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  background: #50afe2;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+form button:hover {
+  background: #3b8fbf;
+}
+
+/* --- Proyectos --- */
+#proyectos {
+  max-width: 1100px;
+  margin: 60px auto;
+  text-align: center;
+}
+
+.proyectos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.proyectos-grid article {
+  background:#b0d4f1;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.proyectos-grid article:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.proyectos-grid img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;   /* hace la imagen circular */
+  margin-bottom: 15px;
+}
+
+.proyectos-grid h3 {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+.proyectos-grid p {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+.btn-proyecto {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #50afe2;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+
+.btn-proyecto:hover {
+  background: #3b8fbf;
+}
+
+/* --- Sección Habilidades --- */
+#habilidades {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+#habilidades h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+/* Grid en 2 columnas */
+.habilidades-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+@media (max-width: 768px) {
+  .habilidades-grid {
+    grid-template-columns: 1fr; /* En móviles pasa a una columna */
+  }
+}
+
+/* Cada tarjeta de habilidad */
+.habilidad {
+  background: #b0d4f1;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.habilidad:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Título de la habilidad centrado */
+.habilidad h4 {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+/* Contenedor de la barra */
+.progress-container {
+  width: 100%;
+  height: 25px;
+  background: var(--fondo-barras);
+  border-radius: 15px;
+  overflow: hidden;
+  margin-bottom: 15px;
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Barra animada */
+.progress-bar {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, #50afe2, #3b8fbf);
+  text-align: right;
+  padding-right: 10px;
+  line-height: 25px;
+  color: white;
+  font-weight: bold;
+  font-size: 0.9rem;
+  border-radius: 15px 0 0 15px;
+  transition: width 0.4s ease-in-out;
+}
+
+/* Botones */
+.controls {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  justify-content: center;
+}
+
+.controls button {
+  flex: 1;
+  max-width: 120px;
+  padding: 8px 12px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: var(--botones);
+  color: black;
+  transition: background 0.3s;
+}
+
+.controls button:hover {
+  background: #50afe2;
+  color: white;
+}
+
+/* --- Intro --- */
+.intro {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.intro h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.intro p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* --- Sobre mí --- */
+.sobremi {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.sobremi-texto h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.sobremi-texto p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #444;
+  text-align: justify;
+}
+
+.sobremi-foto img {
+  width: 100%;
+  max-width: 350px;   /* controla el tamaño máximo */
+  height: auto;       /* mantiene proporción */
+  border-radius: 12px;
+  object-fit: contain; /* asegura que no se recorte */
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Responsive: en móvil se apilan */
+@media (max-width: 768px) {
+  .sobremi {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .sobremi-foto img {
+    max-width: 250px;
+  }
+}
+
+html {
+  scroll-padding-top: 120px;
 }

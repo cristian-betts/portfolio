@@ -26,8 +26,8 @@ function updateBar(barId) {
     bar.style.width = progressValues[barId] + "%";
     bar.textContent = progressValues[barId] + "%";
   } else {
-    console.error("No existe un elemento con id:", barId);
-  }
+    console.error("No existe un elemento con id:", barId);
+}
 }
 
 //validación del formulario
@@ -90,13 +90,16 @@ document.getElementById("miFormulario").addEventListener("submit", (e) => {
 //menu hamburguesa responsive
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('nav-links');
-hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('show');
-});
 
-const links = document.querySelectorAll("#nav-links a");
-links.forEach(link => {
-  link.addEventListener("click", () => {
-    navLinks.classList.remove("show");
+if (hamburger && navLinks) {
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
   });
-});
+
+  const links = document.querySelectorAll("#nav-links a");
+  links.forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("show");
+    });
+  });
+}

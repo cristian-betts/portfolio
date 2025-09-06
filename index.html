@@ -8,7 +8,7 @@
     <title>Portfolio</title>
 </head>
 <body>
-    <Header>
+    <header>
         <nav class="navbar">
             <button class="hamburger" id="hamburger">&#9776;</button>
             <ul class="nav-links" id="nav-links">
@@ -18,143 +18,172 @@
                 <li><a href="#contactame">Contáctame</a></li>
             </ul>
         </nav>
-    </Header>
+    </header>
     <main>
-        <!--Introducción a mi-->
-         <section>
-            <h1>Hola, mi nombre es Cristian David Betts Sarmiento</h1>
-            <p>Soy un estudiate de Ingeniería Quimica apasionado por aprender y aplicar estos aprendizajes adquiridos en su día a día</p>
-        </section>
-        <!--Sobre mi-->
-        <section id="sobremi">
-                <h2>Sobre mí</h2>
-                <article>
-                    <p>Soy bachiller académico, técnico en Análisis Químico Industrial y Control de Calidad certificado por el SENA. Actualmente me encuentro estudiando Ingeniería Química en la Universidad de Cartagena. Soy una persona activa y sociable, dispuesto a aprender y a mejorar como persona.</p>
-                    <img src="./assets/images/about myself .jpg" alt="Imagen mía, con mi hermana y mi primo">
-                </article>
-        </section>
+       <!-- Introducción -->
+<section id="intro" class="intro">
+  <h1>Hola, mi nombre es Cristian David Betts Sarmiento</h1>
+  <p>
+    Soy un estudiante de Ingeniería Química apasionado por aprender y aplicar
+    estos aprendizajes adquiridos en su día a día.
+  </p>
+</section>
+
+<!-- Sobre mí -->
+<section id="sobremi" class="sobremi">
+  <div class="sobremi-texto">
+    <h2>Sobre mí</h2>
+    <p>
+      Soy bachiller académico, técnico en Análisis Químico Industrial y Control
+      de Calidad certificado por el SENA. Actualmente me encuentro estudiando
+      Ingeniería Química en la Universidad de Cartagena. Soy una persona activa
+      y sociable, dispuesto a aprender y a mejorar como persona.
+    </p>
+  </div>
+  <div class="sobremi-foto">
+    <img src="./assets/images/about myself .jpg" alt="Cristian con mi hermana y primo">
+  </div>
+</section>
+
         <!--Habilidades-->
         <section id="habilidades">
-            <h2>Habilidades</h2>
-            <article>
-                <h4>Análisis Químico</h4>
-                <div class="progress-container">
-                    <div class="progress-bar" id="bar1">0%</div>
-                    <div class=""></div>
-                </div>
-                <div class="controls">
-                    <button onclick="increaseProgress('bar1')">Aumentar</button>
-                    <button onclick="resetProgress('bar1')">Reiniciar</button>
-                </div>
-            </article>
-            <article>
-                <h4>Elaboración de Productos Químicos</h4>
-                <div class="progress-container">
-                    <div class="progress-bar" id="bar2">0%</div>
-                    <div class=""></div>
-                </div>
-                <div class="controls">
-                    <button onclick="increaseProgress('bar2')">Aumentar</button>
-                    <button onclick="resetProgress('bar2')">Reiniciar</button>
-                </div>
-            </article>
-            <article>
-                <h4>Manejos Básicos de Programación</h4>
-                <div class="progress-container">
-                    <div class="progress-bar" id="bar3">0%</div>
-                    <div class=""></div>
-                </div>
-                <div class="controls">
-                    <button onclick="increaseProgress('bar3')">Aumentar</button>
-                    <button onclick="resetProgress('bar3')">Reiniciar</button>
-                </div>
-            </article>
-            <article>
-                <h4>Teoría STEM</h4>
-                <div class="progress-container">
-                    <div class="progress-bar" id="bar4">0%</div>
-                    <div class=""></div>
-                </div>
-                <div class="controls">
-                    <button onclick="increaseProgress('bar4')">Aumentar</button>
-                    <button onclick="resetProgress('bar4')">Reiniciar</button>
-                </div>
-            </article>
-            <article>
-                <h4>Manejo de Técnicas de Laboratorio</h4>
-                <div class="progress-container">
-                    <div class="progress-bar" id="bar5">0%</div>
-                    <div class=""></div>
-                </div>
-                <div class="controls">
-                    <button onclick="increaseProgress('bar5')">Aumentar</button>
-                    <button onclick="resetProgress('bar5')">Reiniciar</button>
-                </div>
-            </article>
-            <article>
-                <h4>Habilidades para la Vida</h4>
-                <div class="progress-container">
-                    <div class="progress-bar" id="bar6">0%</div>
-                    <div class=""></div>
-                </div>
-                <div class="controls">
-                    <button onclick="increaseProgress('bar6')">Aumentar</button>
-                    <button onclick="resetProgress('bar6')">Reiniciar</button>
-                </div>
-            </article>
-        </section>
+  <h2>Habilidades</h2>
+  <div class="habilidades-grid">
+    <article class="habilidad">
+      <h4>Análisis Químico</h4>
+      <div class="progress-container">
+        <div class="progress-bar" id="bar1">0%</div>
+      </div>
+      <div class="controls">
+        <button onclick="increaseProgress('bar1')">Aumentar</button>
+        <button onclick="resetProgress('bar1')">Reiniciar</button>
+      </div>
+    </article>
+
+    <article class="habilidad">
+      <h4>Elaboración de Productos Químicos</h4>
+      <div class="progress-container">
+        <div class="progress-bar" id="bar2">0%</div>
+      </div>
+      <div class="controls">
+        <button onclick="increaseProgress('bar2')">Aumentar</button>
+        <button onclick="resetProgress('bar2')">Reiniciar</button>
+      </div>
+    </article>
+
+    <article class="habilidad">
+      <h4>Manejo Básico de Programación</h4>
+      <div class="progress-container">
+        <div class="progress-bar" id="bar3">0%</div>
+      </div>
+      <div class="controls">
+        <button onclick="increaseProgress('bar3')">Aumentar</button>
+        <button onclick="resetProgress('bar3')">Reiniciar</button>
+      </div>
+    </article>
+
+    <article class="habilidad">
+      <h4>Teoría STEM</h4>
+      <div class="progress-container">
+        <div class="progress-bar" id="bar4">0%</div>
+      </div>
+      <div class="controls">
+        <button onclick="increaseProgress('bar4')">Aumentar</button>
+        <button onclick="resetProgress('bar4')">Reiniciar</button>
+      </div>
+    </article>
+
+    <article class="habilidad">
+      <h4>Manejo de Técnicas de Laboratorio</h4>
+      <div class="progress-container">
+        <div class="progress-bar" id="bar5">0%</div>
+      </div>
+      <div class="controls">
+        <button onclick="increaseProgress('bar5')">Aumentar</button>
+        <button onclick="resetProgress('bar5')">Reiniciar</button>
+      </div>
+    </article>
+
+    <article class="habilidad">
+      <h4>Habilidades para la Vida</h4>
+      <div class="progress-container">
+        <div class="progress-bar" id="bar6">0%</div>
+      </div>
+      <div class="controls">
+        <button onclick="increaseProgress('bar6')">Aumentar</button>
+        <button onclick="resetProgress('bar6')">Reiniciar</button>
+      </div>
+    </article>
+  </div>
+</section>
+
         <!--Proyectos-->
         <section id="proyectos">
-            <h2>Proyectos</h2>
-            <article>
-                <img src="./assets/images/tensegrity.jpg" alt="Mi grupo trabajando en la estructura">    
-                <p>Estructura tensegrítica (tensegrity structure)</p> 
-                <button><a href="./projects.html">Ver más</a></button>
-            </article>
-            <article>
-                <img src="./assets/images/rubor.jpg" alt="Rubor compacto Odetta Cosmetics">
-                <p>Rubor compacto a partir de las antocianinas del Corozo</p>
-                <button><a href="./projects.html">Ver más</a></button>
-            </article>
-            <article>
-                <img src="./assets/images/informe, imagen de referencia.jpeg" alt="Conversión de metano a hidrógeno y su uso potencial">
-                <p>Estudio de producción de Hidrógeno a Partir de Metano</p>
-                <button><a href="./projects.html">Ver más</a></button>
-            </article>
-        </section>
+  <h2>Proyectos</h2>
+  <div class="proyectos-grid">
+    <article>
+      <img src="./assets/images/tensegrity.jpg" alt="Estructura tensegrítica">    
+      <h3>Estructura de tensegridad</h3> 
+      <p>Trabajo en equipo en construcción de estructura tensegrítica.</p>
+      <a href="./projects.html" class="btn-proyecto">Ver más</a>
+    </article>
+    <article>
+      <img src="./assets/images/rubor.jpg" alt="Rubor compacto Odetta Cosmetics">
+      <h3>Rubor compacto</h3>
+      <p>Rubor a partir de antocianinas del corozo.</p>
+      <a href="./projects.html" class="btn-proyecto">Ver más</a>
+    </article>
+    <article>
+      <img src="./assets/images/descarga.jpeg" alt="Conversión de metano a hidrógeno">
+      <h3>Hidrógeno a partir de metano</h3>
+      <p>Estudio de producción de hidrógeno y su potencial energético.</p>
+      <a href="./projects.html" class="btn-proyecto">Ver más</a>
+    </article>
+  </div>
+</section>
+
         <!--Contacto-->
-        <section id="contactame">
+        <section class="contacto" id="contactame">
             <h2>Contáctame</h2>
-            <form id="miFormulario" action="#">
+            <form id="miFormulario" class="contacto" action="#">
                 <fieldset>
-                    <legend>* Indica que el campo es obligatorio</legend>
-                    <label for="nombre">Nombre*</label>
-                    <input id="nombre" type="text" required>
-                    <small id="errorNombre"></small>
-                    <label for="mail">Correo electrónico*</label>
-                    <input id="mail" type="email" required>
-                    <small id="errorMail"></small>
-                    <label for="telefono">Télefono (fijo)</label>
-                    <input id="telefono" type="number" min="7">
-                    <small id="errorTelefono"></small>
-                    <label for="direccion">Dirección</label>
-                    <input id="direccion" type="text">
-                    <small id="errorDireccion"></small>
-                    <label for="celular">Télefono (celular)*</label>
-                    <input id="celular" type="number" min="10" required>
-                    <small id="errorCelular"></small>
-                    <label for="contacto">¿Cómo desea ser contactado?</label>
-                    <select name="contacto" id="contacto" required>
-                        <option value="opcion">Seleccione una opción</option>
-                        <option value="fijo">Télefono Fijo</option>
-                        <option value="celular">Télefono Celular</option>
-                        <option value="email">Correo Electrónico</option>
-                    </select>
-                    <small id="errorContacto"></small>
-                    <textarea name="mensaje" id="mensaje">Mensaje (opcional)</textarea>
-                </fieldset>
-                <button>Enviar</button>
-            </form>
+    <legend>* Indica que el campo es obligatorio</legend>
+
+    <label for="nombre">Nombre*</label>
+    <input id="nombre" type="text" required>
+    <small id="errorNombre"></small>
+
+    <label for="mail">Correo electrónico*</label>
+    <input id="mail" type="email" required>
+    <small id="errorMail"></small>
+
+    <label for="telefono">Teléfono (fijo)</label>
+    <input id="telefono" type="tel" pattern="[0-9]{7,}">
+    <small id="errorTelefono"></small>
+
+    <label for="direccion">Dirección</label>
+    <input id="direccion" type="text">
+    <small id="errorDireccion"></small>
+
+    <label for="celular">Teléfono (celular)*</label>
+    <input id="celular" type="tel" pattern="[0-9]{10}" required>
+    <small id="errorCelular"></small>
+
+    <label for="contacto">¿Cómo desea ser contactado?</label>
+    <select name="contacto" id="contacto" required>
+      <option value="">Seleccione una opción</option>
+      <option value="fijo">Teléfono Fijo</option>
+      <option value="celular">Teléfono Celular</option>
+      <option value="email">Correo Electrónico</option>
+    </select>
+    <small id="errorContacto"></small>
+
+    <label for="mensaje">Mensaje (opcional)</label>
+    <textarea name="mensaje" id="mensaje"></textarea>
+  </fieldset>
+
+  <button type="submit">Enviar</button>
+</form>
         </section>
     </main>
     <footer>
